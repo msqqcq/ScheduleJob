@@ -1,0 +1,15 @@
+FROM alpine
+
+WORKDIR /app
+
+#RUN echo "https://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories \
+#    && echo "https://mirrors.aliyun.com/alpine/latest-stable/community/" >> /etc/apk/repositories \
+RUN apk update && apk add --no-cache curl
+RUN apk add --no-cache tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && apk del tzdata
+#RUN crontab -l
+#RUN touch /app/cron.log
+RUN chmod 777 /etc/crontabs/root
+#CMD ["crond", "-f"]

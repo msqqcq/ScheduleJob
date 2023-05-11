@@ -1,0 +1,17 @@
+version: '3'
+services:
+  cknit:
+    image: cknit
+    container_name: cknit
+    ports:
+      - "5000:5000"
+
+  crontab:
+    image: crontab:alpine
+    container_name: crontab
+    volumes:
+      - ./crontab/log:/app/log/
+      - ./crontab/crontabs:/etc/crontabs
+      - ./crontab/periodic/min:/etc/periodic/min
+      - ./crontab/jobs:/app/jobs/
+    command: crond -f

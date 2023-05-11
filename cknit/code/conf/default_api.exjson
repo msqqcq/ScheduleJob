@@ -1,0 +1,32 @@
+{
+    "message": "Welcome use cknit",
+    "version": "1.0",
+    "code" : "OK",
+    "port" : 9898,
+    "APIs" : [
+        {
+            "name": "Get all exists tasks",
+            "method": "GET",
+            "protocol": "HTTP/1.1",
+            "url": "http://127.0.0.1:9898/monitors"
+        },
+        {
+            "name": "Add task",
+            "method": "POST",
+            "protocol": "HTTP/1.1",
+            "url": "http://127.0.0.1:9898/monitors"
+        },
+        {
+            "name": "Modify task",
+            "method": "PUT",
+            "protocol": "HTTP/1.1",
+            "url": "http://127.0.0.1:9898/monitors"
+        },
+        {
+            "name": "Delete task",
+            "method": "DELETE",
+            "protocol": "HTTP/1.1",
+            "url": "http://127.0.0.1:9898/monitors"
+        }
+    ]
+}

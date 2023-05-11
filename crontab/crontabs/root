@@ -1,0 +1,8 @@
+# do daily/weekly/monthly maintenance
+# min	hour	day	month	weekday	command
+*	*	*	*	*	chmod -R 777 /etc/periodic/min && run-parts /etc/periodic/min
+*/15	*	*	*	*	chmod -R 777 /etc/periodic/15min && run-parts /etc/periodic/15min
+0	*	*	*	*	chmod -R 777 /etc/periodic/hourly && run-parts /etc/periodic/hourly
+0	2	*	*	*	chmod -R 777 /etc/periodic/daily && run-parts /etc/periodic/daily
+0	3	*	*	6	chmod -R 777 /etc/periodic/weekly && run-parts /etc/periodic/weekly
+0	5	1	*	*	chmod -R 777 /etc/periodic/monthly && run-parts /etc/periodic/monthly

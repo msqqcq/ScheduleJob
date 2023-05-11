@@ -1,0 +1,14 @@
+# cknit.exjson文件是系统的配置文件
+# 此处配置系统的全局参数
+# 目前仅支持下列参数：
+# daemon   : 是否后台运行cknit, 如果为false,那么cknit会以前台模式执行
+# task_conf: 系统的默认任务文件路径
+# data     : 任务数据落地文件夹，数据落地文件 ckdb
+# Author: Josin Email: xeapplee@gmail.com
+{
+    "system":{
+        "daemon": true,                         # Use Daemon mode or not
+        "data"  : "/var/log/cknit",             # The task data store path
+        "task_conf": "/etc/cknit/task.exjson"   # System config file path
+    }
+}
