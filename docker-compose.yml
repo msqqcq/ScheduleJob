@@ -14,4 +14,15 @@ services:
       - ./crontab/crontabs:/etc/crontabs
       - ./crontab/periodic/min:/etc/periodic/min
       - ./crontab/jobs:/app/jobs/
+    environment:
+      - STOCK_RA_HOST=172.18.0.5
+      - STOCK_RA_PORT=5000
+    networks:
+      - docker_ms-local
     command: crond -f
+
+
+networks:
+  docker_ms-local:
+    driver: bridge
+    external: true
